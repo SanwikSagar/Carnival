@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#42c2f7">
+  <title>Sparky's Playtime Quest - Preschool Early Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800;900&family=Nunito:wght@700;800;900;1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=asset-edge-fix-2">
+</head>
+<body>
+  <main class="game-shell">
+    <!-- Vector Preschool Scenery Layer (Clouds, Rainbow, Smiling Sun, Hills) -->
+    <div class="scenery-layer" aria-hidden="true">
+      <!-- Smiling Sun with rotating beams -->
+      <div class="scenery-sun-wrap">
+        <img class="scenery-sun-art" src="./assets/sun-smiling.svg" alt="">
+      </div>
+
+      <!-- Pastel Rainbow -->
+      <img class="scenery-rainbow" src="./assets/rainbow.svg" alt="">
+
+      <!-- Multiple Puffy Clouds Drifting -->
+      <img class="scenery-cloud cloud-1" src="./assets/cloud-happy.svg" alt="">
+      <img class="scenery-cloud cloud-2" src="./assets/cloud-happy.svg" alt="">
+      <img class="scenery-cloud cloud-3" src="./assets/cloud-happy.svg" alt="">
+      <img class="scenery-cloud cloud-4" src="./assets/cloud-happy.svg" alt="">
+
+      <!-- Festive Bunting Garland across top -->
+      <img class="scenery-bunting" src="./assets/bunting.svg" alt="">
+
+      <!-- Lush Green Rolling Hills with Daisies -->
+      <div class="scenery-hills">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0 60 Q 300 20 600 50 Q 900 80 1200 40 L 1200 120 L 0 120 Z" fill="#86efac" opacity="0.6"/>
+          <path d="M 0 80 Q 250 45 550 75 Q 850 35 1200 65 L 1200 120 L 0 120 Z" fill="#4ade80"/>
+        </svg>
+        <div class="hill-flowers">
+          <img class="daisy daisy-1" src="./assets/flower-daisy.svg" alt="">
+          <img class="daisy daisy-2" src="./assets/flower-daisy.svg" alt="">
+          <img class="daisy daisy-3" src="./assets/flower-daisy.svg" alt="">
+          <img class="daisy daisy-4" src="./assets/flower-daisy.svg" alt="">
+          <img class="daisy daisy-5" src="./assets/flower-daisy.svg" alt="">
+        </div>
+      </div>
+
+      <!-- Interactive Floating Soap Bubbles -->
+      <div class="bubble-field" id="bubble-field"></div>
+    </div>
+
+    <!-- Top Cloud & Bubble Navigation HUD -->
+    <header class="top-hud">
+      <div class="hud-left">
+        <button class="hud-logo bubble-btn" id="hud-home-logo" aria-label="Go to Main Menu" type="button">
+          <img class="hud-logo-icon" src="./assets/cocomelon-melon.svg" alt="">
+          <div class="hud-logo-text">
+            <span class="hud-logo-title">Sparky's</span>
+            <span class="hud-logo-sub">PLAYTIME</span>
+          </div>
+        </button>
+        <div class="hud-stars cloud-pill" aria-label="Stars collected">
+          <img src="./assets/cocomelon-star.svg" alt="">
+          <span class="hud-stars-count" id="star-count">0</span>
+        </div>
+      </div>
+
+      <div class="hud-actions">
+        <button class="hud-btn hud-btn-sound bubble-btn" id="sound-toggle" aria-label="Mute sound effects" title="Sound Effects" type="button">
+          <img id="sound-icon" src="./assets/icon-speaker.svg" alt="">
+        </button>
+        <button class="hud-btn hud-btn-home bubble-btn" id="hud-main-menu" aria-label="Main menu" title="Main Menu" type="button">
+          <img src="./assets/icon-home.svg" alt="">
+        </button>
+        <button class="hud-btn hud-btn-restart bubble-btn" id="hud-restart" aria-label="Restart round" title="Restart" type="button">
+          <img src="./assets/icon-restart.svg" alt="">
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Learning Play Area -->
+    <section class="play-area">
+      <!-- Sparky / Lucas the Guide -->
+      <div class="character-wrap" id="character-wrap" role="button" tabindex="0" aria-label="Sparky the Guide (tap to tickle!)">
+        <canvas id="sparky" width="512" height="640"></canvas>
+        <div class="character-shadow"></div>
+        <div class="speech-bubble cloud-bubble" id="speech-bubble">
+          <p id="speech">Welcome to play time!</p>
+        </div>
+      </div>
+
+      <!-- Main Activity Panel (Puffy Cloud Panel) -->
+      <div class="content-panel cloud-panel" id="content-panel"></div>
+
+      <!-- Sparkle & Particle Layer -->
+      <div class="effects-layer" id="effects-layer" aria-hidden="true"></div>
+
+      <!-- Encouraging Feedback Toast -->
+      <div class="feedback cloud-pill" id="feedback" role="status" aria-live="polite"></div>
+    </section>
+
+    <!-- Friendly Footer Bar -->
+    <footer class="bottom-bar">
+      <span>☁️ Play at your own pace • Every try is a great try! 🫧</span>
+      <div class="footer-actions">
+        <button id="main-menu-btn" class="restart-button bubble-pill" type="button">
+          <img src="./assets/icon-home.svg" alt=""> <span>Main menu</span>
+        </button>
+        <button id="restart" class="restart-button bubble-pill" type="button">
+          <img src="./assets/icon-restart.svg" alt=""> <span>Play again</span>
+        </button>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="game.js?v=asset-edge-fix-2"></script>
+</body>
+</html>
+
+
